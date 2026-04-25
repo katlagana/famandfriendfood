@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EoE & Schatzki Ring — Shopping Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F7F4EE;
+    --warm-white: #FDFCF9;
+    --ink: #1C1A16;
+    --ink-soft: #5C5849;
+    --ink-muted: #9B957F;
+    --teal: #1D9E75;
+    --teal-light: #E1F5EE;
+    --teal-mid: #9FE1CB;
+    --teal-dark: #0F6E56;
+    --red-soft: #FCEBEB;
+    --red-mid: #F7C1C1;
+    --red: #A32D2D;
+    --red-dark: #791F1F;
+    --purple-soft: #EEEDFE;
+    --purple: #534AB7;
+    --amber-soft: #FAEEDA;
+    --amber: #854F0B;
+    --green-soft: #EAF3DE;
+    --green: #3B6D11;
+    --blue-soft: #E6F1FB;
+    --blue: #185FA5;
+    --border: rgba(28,26,22,0.1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 3.5rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 40px,
+      rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 41px
+    );
+  }
+  header .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal-mid);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    position: relative;
+  }
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--warm-white);
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  header h1 em { font-style: italic; color: var(--teal-mid); }
+  header .subtitle {
+    font-size: 15px;
+    color: rgba(247,244,238,0.6);
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* NAV PILLS */
+  nav {
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav a {
+    font-size: 13px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.15s;
+  }
+  nav a:hover { background: var(--teal-light); border-color: var(--teal); color: var(--teal-dark); }
+
+  /* MAIN CONTENT */
+  main { max-width: 860px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  section { margin-bottom: 3.5rem; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  h2 em { font-style: italic; }
+  p { color: var(--ink-soft); line-height: 1.75; margin-bottom: 0.85rem; }
+  p:last-child { margin-bottom: 0; }
+
+  /* DIVIDER */
+  .divider { height: 1px; background: var(--border); margin: 0.5rem 0 2rem; }
+
+  /* TIPS CALLOUT */
+  .callout {
+    background: var(--teal-light);
+    border-left: 3px solid var(--teal);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .callout-title { font-weight: 500; color: var(--teal-dark); font-size: 14px; margin-bottom: 4px; }
+  .callout p { color: var(--teal-dark); font-size: 14px; margin: 0; }
+
+  /* AVOID BOX */
+  .avoid-box {
+    background: var(--red-soft);
+    border: 1px solid var(--red-mid);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .avoid-box h3 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; font-weight: 400; color: var(--red); margin-bottom: 0.4rem; }
+  .avoid-box p { font-size: 13px; color: var(--red); margin-bottom: 0.75rem; }
+  .avoid-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .avoid-pill {
+    background: var(--red-mid);
+    color: var(--red-dark);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  /* CATEGORY TABS */
+  .cat-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+  .cat-tab {
+    padding: 7px 16px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: var(--warm-white);
+    color: var(--ink-soft);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.15s;
+  }
+  .cat-tab:hover { border-color: var(--teal); color: var(--teal-dark); }
+  .cat-tab.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+  /* PROGRESS */
+  .progress-wrap { margin-bottom: 1.25rem; }
+  .progress-meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-muted); margin-bottom: 5px; }
+  .progress-track { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--teal); border-radius: 3px; transition: width 0.35s ease; }
+
+  /* ITEMS GRID */
+  .items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+  .item-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 11px 13px;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    user-select: none;
+  }
+  .item-row:hover { border-color: var(--teal); }
+  .item-row.checked { opacity: 0.4; background: var(--teal-light); border-color: var(--teal-mid); }
+  .checkbox {
+    width: 17px; height: 17px; flex-shrink: 0;
+    border-radius: 5px;
+    border: 1.5px solid var(--border);
+    background: var(--warm-white);
+    margin-top: 1px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .item-row.checked .checkbox { background: var(--teal); border-color: var(--teal); }
+  .checkmark { display: none; width: 9px; height: 6px; border-left: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(-45deg) translate(1px, -1px); }
+  .item-row.checked .checkmark { display: block; }
+  .item-name { font-size: 13px; font-weight: 500; color: var(--ink); }
+  .item-note { font-size: 11px; color: var(--ink-muted); margin-top: 2px; line-height: 1.4; }
+
+  /* NOTES SECTION */
+  .notes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-top: 1rem; }
+  .note-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+  }
+  .note-card h4 { font-family: 'DM Serif Display', serif; font-size: 1rem; font-weight: 400; color: var(--ink); margin-bottom: 0.4rem; }
+  .note-card p { font-size: 13px; color: var(--ink-soft); margin: 0; line-height: 1.6; }
+
+  /* RESET BTN */
+  .reset-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--ink-muted);
+    font-size: 12px;
+    font-family: 'DM Sans', sans-serif;
+    padding: 5px 14px;
+    border-radius: 100px;
+    cursor: pointer;
+    float: right;
+    margin-top: -2px;
+    transition: all 0.15s;
+  }
+  .reset-btn:hover { border-color: var(--red); color: var(--red); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(247,244,238,0.5);
+    text-align: center;
+    font-size: 12px;
+    padding: 2rem;
+    line-height: 1.8;
+  }
+  footer strong { color: var(--cream); }
+
+  @media (max-width: 600px) {
+    header { padding: 2.5rem 1.25rem 2rem; }
+    main { padding: 2rem 1rem 4rem; }
+    .items-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Family dietary guide</div>
+  <h1>EoE &amp; Schatzki Ring<br><em>Shopping Guide</em></h1>
+  <p class="subtitle">Safe, soft foods and pantry staples — curated to avoid common triggers and protect the esophagus.</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#shopping">Shopping list</a>
+  <a href="#tips">Label tips</a>
+  <a href="#disclaimer">Important note</a>
+</nav>
+
+<main>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="section-label">Understanding the conditions</div>
+    <h2>Why these foods <em>matter</em></h2>
+    <div class="divider"></div>
+    <p>Two conditions shape this guide. A <strong>Schatzki ring</strong> is a narrow band of tissue at the lower esophagus that makes swallowing difficult — especially with dry, chewy, or dense foods. <strong>Eosinophilic esophagitis (EoE)</strong> is an immune-mediated condition where certain foods trigger inflammation and swelling in the esophagus, sometimes forming rings over time.</p>
+    <p>Together, they require a diet that is both <em>soft in texture</em> (to prevent food getting stuck) and <em>free of common allergens</em> (to prevent immune flares). Every item on this list has been selected with both in mind.</p>
+
+    <div class="avoid-box">
+      <h3>Always avoid these triggers</h3>
+      <p>These are the six most common EoE triggers. Check every label carefully — they hide under many names.</p>
+      <div class="avoid-pills">
+        <span class="avoid-pill">Dairy / milk</span>
+        <span class="avoid-pill">Wheat / gluten</span>
+        <span class="avoid-pill">Eggs</span>
+        <span class="avoid-pill">Soy</span>
+        <span class="avoid-pill">Tree nuts &amp; peanuts</span>
+        <span class="avoid-pill">Shellfish</span>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">General eating habits that help</div>
+      <p>Eat slowly, chew thoroughly, and take small bites — especially with proteins. Stay upright for at least 30 minutes after meals. Keep portions small to avoid pressure on the lower esophagus. Sip still water between bites to help move food down.</p>
+    </div>
+  </section>
+
+  <!-- SHOPPING LIST -->
+  <section id="shopping">
+    <div class="section-label">Interactive checklist</div>
+    <h2>Your <em>shopping list</em></h2>
+    <div class="divider"></div>
+    <p style="margin-bottom:1.5rem;">Tap any item to mark it as found. Switch between categories using the tabs below. Your progress is tracked at the top.</p>
+
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span id="prog-label">0 of 0 items checked</span>
+        <button class="reset-btn" onclick="resetAll()">Reset all</button>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+    </div>
+
+    <div class="cat-tabs" id="cat-tabs"></div>
+    <div class="items-grid" id="items-grid"></div>
+  </section>
+
+  <!-- LABEL TIPS -->
+  <section id="tips">
+    <div class="section-label">At the store</div>
+    <h2>Reading labels <em>carefully</em></h2>
+    <div class="divider"></div>
+    <p>Hidden triggers are the biggest challenge. These categories disguise themselves under ingredient names most people don't recognise.</p>
+
+    <div class="notes-grid">
+      <div class="note-card">
+        <h4>Soy hides as...</h4>
+        <p>Soy lecithin, edamame, miso, tamari, tempeh, textured vegetable protein (TVP), hydrolyzed soy protein.</p>
+      </div>
+      <div class="note-card">
+        <h4>Gluten hides as...</h4>
+        <p>Malt, barley, wheat starch, spelt, kamut, triticale, durum, semolina, farro — and "natural flavors" can sometimes contain gluten.</p>
+      </div>
+      <div class="note-card">
+        <h4>Dairy hides as...</h4>
+        <p>Casein, whey, lactose, lactalbumin, ghee, butter solids — even in products that don't taste like dairy.</p>
+      </div>
+      <div class="note-card">
+        <h4>Eggs hide as...</h4>
+        <p>Albumin, globulin, lysozyme, mayonnaise, meringue, ovalbumin — and "lecithin" can be egg-derived (not always soy).</p>
+      </div>
+      <div class="note-card">
+        <h4>For proteins</div>
+        <p>Buy in bulk and freeze portions. Salmon, tilapia, and ground turkey freeze beautifully and make weeknight cooking effortless.</p>
+      </div>
+      <div class="note-card">
+        <h4>For dairy-free products</h4>
+        <p>Choose coconut yogurt and oat milks with the shortest ingredient lists possible. Fewer ingredients means fewer chances for a hidden trigger.</p>
+      </div>
+      <div class="note-card">
+        <h4>Be consistent</h4>
+        <p>When you find a brand that works, stick with it. EoE symptoms can take days to appear after a trigger, making it hard to pinpoint new products.</p>
+      </div>
+      <div class="note-card">
+        <h4>Avoid carbonation</h4>
+        <p>Fizzy drinks create pressure in the esophagus. Stick to still water and gentle herbal teas — ginger tea is especially soothing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section id="disclaimer">
+    <div class="section-label">Important</div>
+    <h2>A note for <em>family members</em></h2>
+    <div class="divider"></div>
+    <p>This guide is a helpful starting point — not a substitute for medical advice. Both conditions are managed differently depending on their severity, and a gastroenterologist may recommend specific treatments such as a structured elimination diet with systematic food reintroduction (common for EoE), or an esophageal dilation procedure (common for a Schatzki ring).</p>
+    <p>If you are preparing meals for someone with these conditions, the safest approach is to ask them directly about their current trigger list, since it varies from person to person. A registered dietitian familiar with EoE and esophageal conditions is an excellent resource for personalizing this guide further.</p>
+    <div class="callout">
+      <div class="callout-title">When to seek urgent care</div>
+      <p>If food becomes lodged in the throat or esophagus and does not pass on its own, this is a medical emergency. Do not attempt to dislodge it with more food or water — seek emergency care immediately.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>EoE &amp; Schatzki Ring Family Guide</strong></p>
+  <p>For informational purposes only. Always follow the guidance of your treating physician and dietitian.</p>
+</footer>
+
+<script>
+const categories = [
+  {
+    name: "Proteins",
+    items: [
+      { name: "Salmon fillets", note: "Fresh or frozen, skin-on" },
+      { name: "Tilapia / cod", note: "Mild white fish, easy to cook soft" },
+      { name: "Canned tuna in water", note: "Check label — no soy additives" },
+      { name: "Ground turkey", note: "Lean, easy to cook moist" },
+      { name: "Turkey tenderloin", note: "Slice thin after cooking" },
+      { name: "Chicken thighs (boneless)", note: "Stays tender when slow-cooked" },
+      { name: "Lean ground beef", note: "For meatballs or stew" },
+      { name: "Ground lamb", note: "For soups and stews" },
+    ]
+  },
+  {
+    name: "Grains & starches",
+    items: [
+      { name: "White rice", note: "Long grain or jasmine" },
+      { name: "Gluten-free rolled oats", note: "Certified GF — soft when cooked" },
+      { name: "Quinoa", note: "Protein-rich, soft when cooked well" },
+      { name: "Polenta / cornmeal", note: "Creamy with extra liquid" },
+      { name: "GF rice cakes", note: "Check label for dairy/soy" },
+      { name: "GF rice flour", note: "For pancakes and baking" },
+      { name: "Red lentils", note: "Cook down to very soft texture" },
+      { name: "Russet or Yukon potatoes", note: "Great mashed with olive oil" },
+      { name: "Sweet potatoes", note: "Nutritious, naturally soft" },
+    ]
+  },
+  {
+    name: "Fruits",
+    items: [
+      { name: "Ripe bananas", note: "Soft, no chewing required" },
+      { name: "Mangoes", note: "Fresh or frozen — great in smoothies" },
+      { name: "Unsweetened applesauce", note: "Pre-made or make fresh" },
+      { name: "Blueberries", note: "Soft and anti-inflammatory" },
+      { name: "Strawberries", note: "Dice small or cook into compote" },
+      { name: "Cantaloupe / honeydew", note: "Soft, hydrating, gentle" },
+      { name: "Canned peaches (in juice)", note: "No syrup varieties" },
+      { name: "Watermelon", note: "Very easy to swallow" },
+      { name: "Kiwi", note: "Slice thin or blend" },
+      { name: "Ripe pears", note: "Peel before eating" },
+    ]
+  },
+  {
+    name: "Vegetables",
+    items: [
+      { name: "Zucchini", note: "Steam or roast until very soft" },
+      { name: "Carrots", note: "Cook until fork-tender" },
+      { name: "Butternut squash", note: "Roast and purée" },
+      { name: "Fresh spinach", note: "Wilt in pan — easy to swallow" },
+      { name: "Green beans", note: "Steam well before serving" },
+      { name: "Asparagus tips", note: "Tips only — more tender" },
+      { name: "Beets", note: "Roast until soft" },
+      { name: "Fennel", note: "Braise until very soft" },
+      { name: "Cucumber", note: "Peel and slice thin" },
+      { name: "Red bell peppers", note: "Roast to soften fully" },
+      { name: "Parsnips", note: "Becomes very soft in stews" },
+      { name: "Pumpkin", note: "Purées beautifully" },
+    ]
+  },
+  {
+    name: "Pantry & dairy-free",
+    items: [
+      { name: "Coconut milk (full-fat)", note: "For smoothies and cooking" },
+      { name: "GF certified oat milk", note: "For pancakes and drinks" },
+      { name: "Plain coconut yogurt", note: "Check for soy or nut additives" },
+      { name: "Olive oil (extra virgin)", note: "For cooking and dressings" },
+      { name: "Pure maple syrup", note: "Natural sweetener" },
+      { name: "Honey", note: "Soothing, good in teas" },
+      { name: "Chia seeds", note: "Soak fully before eating" },
+      { name: "Ground flaxseed", note: "Add to smoothies or oatmeal" },
+      { name: "Plain tomato purée", note: "Check label — no soy or gluten" },
+      { name: "GF low-sodium broth", note: "Vegetable or chicken" },
+      { name: "Fresh ginger root", note: "Anti-inflammatory, great in soups" },
+      { name: "Fresh herbs (thyme, basil)", note: "Flavoring without irritation" },
+    ]
+  }
+];
+
+let checked = {};
+let activeIdx = 0;
+
+function totalItems() { return categories.reduce((s,c) => s + c.items.length, 0); }
+function checkedCount() { return Object.values(checked).filter(Boolean).length; }
+
+function updateProgress() {
+  const total = totalItems();
+  const done = checkedCount();
+  const pct = total ? Math.round(done / total * 100) : 0;
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-label').textContent = done + ' of ' + total + ' items checked';
+}
+
+function renderGrid(idx) {
+  activeIdx = idx;
+  document.querySelectorAll('.cat-tab').forEach((t, i) => {
+    t.className = 'cat-tab' + (i === idx ? ' active' : '');
+  });
+  const cat = categories[idx];
+  document.getElementById('items-grid').innerHTML = cat.items.map((item, i) => {
+    const key = idx + '-' + i;
+    const isChecked = !!checked[key];
+    return `<div class="item-row${isChecked ? ' checked' : ''}" onclick="toggle(${idx},${i})">
+      <div class="checkbox"><div class="checkmark"></div></div>
+      <div><div class="item-name">${item.name}</div><div class="item-note">${item.note}</div></div>
+    </div>`;
+  }).join('');
+}
+
+function toggle(catIdx, itemIdx) {
+  const key = catIdx + '-' + itemIdx;
+  checked[key] = !checked[key];
+  renderGrid(activeIdx);
+  updateProgress();
+}
+
+function resetAll() {
+  if (!confirm('Reset all checked items?')) return;
+  checked = {};
+  renderGrid(activeIdx);
+  updateProgress();
+}
+
+const tabsEl = document.getElementById('cat-tabs');
+categories.forEach((cat, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'cat-tab' + (i === 0 ? ' active' : '');
+  btn.textContent = cat.name;
+  btn.onclick = () => renderGrid(i);
+  tabsEl.appendChild(btn);
+});
+
+renderGrid(0);
+updateProgress();
+</script>
+</body>
+</html>
